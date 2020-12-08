@@ -105,6 +105,9 @@ dist
 
 # Builds
 build/
+.vscode
 
 # AoC Input
 input.txt
+out.txt
+
