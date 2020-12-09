@@ -42,13 +42,10 @@ export async function process2(target: number) {
 
     for(let x = 0; x  < list.length; x++) {
         for(let y = x + 1; y < list.length; y++) {
-            let acc = 0;
 
-            let run = Array<number>();
-            for(let z = x; z <= y; z++) {
-                run.push(list[z]);
-                acc += list[z];
-            }
+            let run = list.slice(x,y);
+            let acc = run.reduce((pre,cur) => {return pre+cur;});
+
             if(acc == target) {
                 let min = Math.min(...run), max = Math.max(...run);
                 console.log(`Weakness: ${min} ${max} = ${min + max}`);
